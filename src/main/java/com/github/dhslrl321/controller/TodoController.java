@@ -29,6 +29,7 @@ public class TodoController {
     public ResponseEntity<Todo> todos(@PathVariable Long id) {
         Todo todo = repository.findById(id)
                 .orElseThrow(NoSuchElementException::new);
+
         return ResponseEntity.ok(todo);
     }
 
